@@ -3,6 +3,7 @@ import 'package:islamy_app_c10/ui/home/home_screen.dart';
 import 'package:islamy_app_c10/ui/quran_details/quran_details_screen.dart';
 
 void main() {
+  print("Hello");
   runApp(const MyApp());
 }
 
