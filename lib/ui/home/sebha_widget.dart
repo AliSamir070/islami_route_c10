@@ -23,34 +23,32 @@ class _SebhaWidgetState extends State<SebhaWidget> {
     return Center(
       child: Column(
         children: [
-          GestureDetector(
-            onTap: onImageClicked,
-            child: Transform.rotate(
-              angle: rotate,
-              child: Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Container(
-                      margin: const EdgeInsets.only(left: 40),
-                      child: Image.asset(
-                        'assets/images/head of seb7a.png',
-                        height: 150,
-                      )),
-                  Container(
-                      margin: const EdgeInsets.only(
-                        top: 103,
-                      ),
-                      child: Image.asset('assets/images/body of seb7a.png')),
-                ],
+    GestureDetector(
+    onTap: onImageClicked,
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: AlignmentDirectional.topCenter,
+          children: [
+            Container(
+               // margin: EdgeInsets.only(left: 40 ),
+              padding: EdgeInsets.only(left: 50) ,
+                child: Image.asset('assets/images/head of seb7a.png')),
+            Transform.rotate(
+            angle: rotate,
+              child: Container(
+                padding: EdgeInsets.all(80),
+                child: Image.asset('assets/images/body of seb7a.png'),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
           const SizedBox(
             height: 60,
           ),
           const Text(
             'عدد التسبيحات',
-            style: TextStyle(fontSize: 22),
+            style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 40,
