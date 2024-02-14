@@ -23,16 +23,13 @@ class _AhadethWidgetState extends State<AhadethWidget> {
           width: double.infinity,
           decoration: BoxDecoration(
             border: Border.symmetric(horizontal: BorderSide(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).dividerColor,
               width: 2
             ))
           ),
           child: Text(
             "Ahadeth",
-            style: TextStyle(
-
-              fontSize: 24
-            ),
+            style:Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Expanded(
@@ -46,7 +43,7 @@ class _AhadethWidgetState extends State<AhadethWidget> {
                     width: double.infinity,
                     margin: EdgeInsets.all(5),
                     height: 2,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).dividerColor,
                   );
                 },
                 itemCount: allAhadeth.length
