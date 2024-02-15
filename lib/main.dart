@@ -18,42 +18,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Color(0xffB7935F),
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.white,
-          selectedIconTheme: IconThemeData(
-            size: 32
-          ),
-          unselectedIconTheme: IconThemeData(
-            size: 20
-          )
-        ),
+            backgroundColor: Color(0xffB7935F),
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Colors.white,
+            selectedIconTheme: IconThemeData(size: 32),
+            unselectedIconTheme: IconThemeData(size: 20)),
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            fontSize: 24,
-            color: Colors.black,
-            fontWeight: FontWeight.bold
-          )
-        ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffB7935F),
+            backgroundColor: Colors.transparent,
+            centerTitle: true,
+            titleTextStyle: TextStyle(
+                fontSize: 24,
+                color: Colors.black,
+                fontWeight: FontWeight.bold)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color(0xffB7935F),
           primary: Color(0xffB7935F),
-          secondary:Color(0xffB7935F).withOpacity(0.57),
+          secondary: Color(0xffB7935F).withOpacity(0.57),
           onPrimary: Colors.white,
           onSecondary: Colors.black,
-
         ),
-
         useMaterial3: true,
       ),
       initialRoute: HomeScreen.routeName,
       routes: {
-        HomeScreen.routeName:(_)=>HomeScreen(),
-        QuranDetailsScreen.routeName:(_)=>QuranDetailsScreen()
+        HomeScreen.routeName: (_) => HomeScreen(),
+        QuranDetailsScreen.routeName: (_) => QuranDetailsScreen()
       },
     );
   }
 }
-
