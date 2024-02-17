@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:islamy_app_c10/style/app_theme.dart';
 import 'package:islamy_app_c10/ui/hadeth_details/hadeth_details_screen.dart';
 import 'package:islamy_app_c10/ui/home/home_screen.dart';
 import 'package:islamy_app_c10/ui/quran_details/quran_details_screen.dart';
@@ -57,10 +58,9 @@ class MyApp extends StatelessWidget {
           onPrimary: Colors.white,
           onSecondary: Colors.black,
 
-        ),
-
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: AppTheme.isDark?ThemeMode.dark:ThemeMode.light,
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName:(_)=>HomeScreen(),
