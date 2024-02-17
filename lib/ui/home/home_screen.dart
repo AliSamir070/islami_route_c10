@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_app_c10/ui/home/ahedeth_widget.dart';
-import 'package:islamy_app_c10/ui/home/quran_widget.dart';
-import 'package:islamy_app_c10/ui/home/radio_widget.dart';
-import 'package:islamy_app_c10/ui/home/sebha_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamy_app_c10/style/app_theme.dart';
 import 'package:islamy_app_c10/ui/home/tabs/ahedeth_widget.dart';
