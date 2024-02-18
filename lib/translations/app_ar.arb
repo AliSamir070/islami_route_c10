@@ -4,5 +4,10 @@
  "ahadeth":"احاديث",
  "sebha":"سبحة",
  "radio":"راديو",
- "chaptertitle":"اسم السورة"
+ "chaptertitle":"اسم السورة",
+ "settings":"اعدادات",
+  "light":"مضئ",
+  "dark":"مظلم",
+  "theme":"السمة",
+  "language":"اللغة"
 }

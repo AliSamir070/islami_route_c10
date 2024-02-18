@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_app_c10/providers/setings_provider.dart';
 import 'package:islamy_app_c10/ui/home/tabs/language_sheet.dart';
 import 'package:islamy_app_c10/ui/home/tabs/theme_sheet.dart';
-
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({Key? key}) : super(key: key);
 
@@ -12,12 +14,13 @@ class SettingsWidget extends StatefulWidget {
 class _SettingsWidgetState extends State<SettingsWidget> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Language",style: TextStyle(fontSize: 20),),
+          Text(AppLocalizations.of(context)!.language,style: TextStyle(fontSize: 20),),
           SizedBox(height: 10,),
           InkWell(
             onTap: (){
@@ -34,12 +37,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     color: Theme.of(context).colorScheme.primary
                   )
                 ),
-                child: Text("English",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                child: Text(provider.language == "ar"?"العربية":"English",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).primaryColor
                 ))),
           ),
           SizedBox(height: 20,),
-          Text("Theme",style: TextStyle(fontSize: 20),),
+          Text(AppLocalizations.of(context)!.theme,style: TextStyle(fontSize: 20),),
           SizedBox(height: 10,),
           InkWell(
             onTap: (){
@@ -56,7 +59,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         color: Theme.of(context).colorScheme.primary
                     )
                 ),
-                child: Text("Light",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                child: Text(provider.theme == ThemeMode.dark
+                    ?AppLocalizations.of(context)!.dark
+                    :AppLocalizations.of(context)!.light,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).primaryColor
                 ))),
           ),

@@ -4,5 +4,10 @@
  "ahadeth":"Ahadeth",
  "sebha":"Sebha",
  "radio":"Radio",
- "chaptertitle":"Chapter title"
+ "chaptertitle":"Chapter title",
+ "settings":"Settings",
+ "light":"Light",
+ "dark":"Dark",
+ "theme":"Theme",
+ "language":"Language"
 }
