@@ -27,6 +27,10 @@ class QuranWidget extends StatelessWidget {
             "assets/images/quran_image.png"
           ),
         ),
+        Text(
+          "Chapter title",
+          style:Theme.of(context).textTheme.titleLarge,
+        ),
         Expanded(
           flex: 3,
           child: ListView.separated(
@@ -43,7 +47,7 @@ class QuranWidget extends StatelessWidget {
                   width: double.infinity,
                   margin: EdgeInsets.all(5),
                   height: 2,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).dividerColor,
                 );
               },
               itemCount: suraNames.length),

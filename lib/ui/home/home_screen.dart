@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_app_c10/ui/home/ahedeth_widget.dart';
-import 'package:islamy_app_c10/ui/home/quran_widget.dart';
-import 'package:islamy_app_c10/ui/home/radio_widget.dart';
-import 'package:islamy_app_c10/ui/home/sebha_widget.dart';
+import 'package:islamy_app_c10/style/app_theme.dart';
+import 'package:islamy_app_c10/ui/home/tabs/ahedeth_widget.dart';
+import 'package:islamy_app_c10/ui/home/tabs/quran_widget.dart';
+import 'package:islamy_app_c10/ui/home/tabs/radio_widget.dart';
+import 'package:islamy_app_c10/ui/home/tabs/sebha_widget.dart';
+import 'package:islamy_app_c10/ui/home/tabs/settings_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
@@ -17,14 +19,15 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranWidget(),
     AhadethWidget(),
     SebhaWidget(),
-    RadioWidget()
+    RadioWidget(),
+    SettingsWidget()
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/bg3.png"),
+            image: AssetImage(AppTheme.isDark?"assets/images/dark_bg.png":"assets/images/bg3.png"),
             fit: BoxFit.fill
         )
       ),
@@ -59,6 +62,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   icon: ImageIcon(AssetImage("assets/images/radio_icon.png")),
                   label: 'Radio'
+              ),
+              BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  icon: Icon(
+                    Icons.settings
+                  ),
+                  label: 'Settings'
               ),
             ]
         ),
