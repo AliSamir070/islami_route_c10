@@ -29,11 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
     SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(provider.theme == ThemeMode.dark
-                  ? "assets/images/dark_bg.png"
-                  : "assets/images/bg3.png"),
-              fit: BoxFit.fill)),
+        image: DecorationImage(
+          image: AssetImage(
+            provider.theme == ThemeMode.dark
+                ? "assets/images/dark_bg.png"
+                : "assets/images/bg3.png",
+          ),
+          fit: BoxFit.fill,
+        ),
+      ),
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.islami),

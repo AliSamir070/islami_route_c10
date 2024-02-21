@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
     SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       title: 'Flutter Demo',
+
       debugShowCheckedModeBanner: false,
+
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -34,9 +36,11 @@ class MyApp extends StatelessWidget {
         Locale('ar'), // Spanish
       ],
       locale: Locale(provider.language),
+
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: provider.theme,
+
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
