@@ -32,15 +32,13 @@ class QuranWidget extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               border: Border.symmetric(horizontal: BorderSide(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).dividerColor,
                   width: 2
               ))
           ),
           child: Text(
             AppLocalizations.of(context)!.chaptertitle,
-            style: TextStyle(
-                fontSize: 24
-            ),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Expanded(

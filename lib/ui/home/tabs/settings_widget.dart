@@ -4,6 +4,7 @@ import 'package:islamy_app_c10/ui/home/tabs/language_sheet.dart';
 import 'package:islamy_app_c10/ui/home/tabs/theme_sheet.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({Key? key}) : super(key: key);
 
@@ -20,32 +21,44 @@ class _SettingsWidgetState extends State<SettingsWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.language,style: TextStyle(fontSize: 20),),
-          SizedBox(height: 10,),
+          Text(
+            AppLocalizations.of(context)!.language,
+            style: const TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           InkWell(
-            onTap: (){
+            onTap: () {
               showLanguageBottomSheet();
             },
             child: Container(
-              alignment: Alignment.center,
-              width: double.infinity,
-              padding: EdgeInsets.all(10),
+                alignment: Alignment.center,
+                width: double.infinity,
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.primary
-                  )
-                ),
-                child: Text(provider.language == "ar"?"العربية":"English",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).primaryColor
-                ))),
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                        color: Theme.of(context).colorScheme.primary)),
+                child: Text(provider.language == "ar" ? "العربية" : "English",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Theme.of(context).primaryColor))),
           ),
-          SizedBox(height: 20,),
-          Text(AppLocalizations.of(context)!.theme,style: TextStyle(fontSize: 20),),
-          SizedBox(height: 10,),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            AppLocalizations.of(context)!.theme,
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           InkWell(
-            onTap: (){
+            onTap: () {
               showThemeBottomSheet();
             },
             child: Container(
@@ -56,15 +69,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                        color: Theme.of(context).colorScheme.primary
-                    )
-                ),
-                child: Text(provider.theme == ThemeMode.dark
-                    ?AppLocalizations.of(context)!.dark
-                    :AppLocalizations.of(context)!.light,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).primaryColor
-                ))),
+                        color: Theme.of(context).colorScheme.primary)),
+                child: Text(
+                    provider.theme == ThemeMode.dark
+                        ? AppLocalizations.of(context)!.dark
+                        : AppLocalizations.of(context)!.light,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Theme.of(context).primaryColor))),
           ),
         ],
       ),
@@ -72,14 +85,18 @@ class _SettingsWidgetState extends State<SettingsWidget> {
   }
 
   void showThemeBottomSheet() {
-    showModalBottomSheet(context: context, builder: (context){
-      return ThemeSheet();
-    });
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return const ThemeSheet();
+        });
   }
 
   void showLanguageBottomSheet() {
-    showModalBottomSheet(context: context, builder: (context){
-      return LanguageSheet();
-    });
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return const LanguageSheet();
+        });
   }
 }

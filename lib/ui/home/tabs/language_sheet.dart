@@ -18,7 +18,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-         getSelectedItem(provider.language == "ar"?"العربية":"English"),
+          getSelectedItem(provider.language == "ar"?"العربية":"English"),
           SizedBox(height: 15,),
           InkWell(
               onTap: (){
