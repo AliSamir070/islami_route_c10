@@ -26,9 +26,9 @@ class _ThemeSheetState extends State<ThemeSheet> {
             height: 15,
           ),
           InkWell(
-            onTap: () {
+            onTap: () async {
               Navigator.pop(context);
-              provider.changeTheme(provider.theme == ThemeMode.dark
+               await provider.changeTheme(provider.theme == ThemeMode.dark
                   ? ThemeMode.light
                   : ThemeMode.dark);
             },

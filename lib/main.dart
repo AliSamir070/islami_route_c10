@@ -8,9 +8,18 @@ import 'package:islamy_app_c10/ui/quran_details/quran_details_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(), child: const MyApp()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var provider = SettingsProvider();
+  await provider.loadSetting();
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => provider,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +31,7 @@ class MyApp extends StatelessWidget {
     SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       title: 'Flutter Demo',
-
       debugShowCheckedModeBanner: false,
-
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -36,11 +43,9 @@ class MyApp extends StatelessWidget {
         Locale('ar'), // Spanish
       ],
       locale: Locale(provider.language),
-
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: provider.theme,
-
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
