@@ -54,6 +54,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
                        turns: turn,
                        duration: Duration(seconds: 1),
 
+
                        child: Image.asset('assets/images/body of seb7a.png'  ,width: double.infinity,))),],
            ),
          ),
@@ -63,12 +64,14 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           child: Column(
             children: [
               SizedBox(height: 30,),
-              Text('عدد التسبيحات',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
+              Text('عدد التسبيحات',style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                  fontWeight: FontWeight.bold,fontSize: 30)),
               SizedBox(height: 20,),
               Container(
 
                   child: ElevatedButton(
-                      style:ElevatedButton.styleFrom(backgroundColor:Color(0xffC9B597),fixedSize: Size(80, 90) ) ,
+                      style:ElevatedButton.styleFrom(backgroundColor:Theme.of(context).dividerColor,fixedSize: Size(80, 90) ) ,
                       onPressed:  ()
                       {
                         setState(() {
@@ -88,7 +91,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
                   decoration: BoxDecoration(
 
                       borderRadius: BorderRadius.circular(30),
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).dividerColor,
                       border: Border.all(
                       width: 2,color:Theme.of(context).primaryColor,style: BorderStyle.solid
 
@@ -96,7 +99,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
 
 
                   child: Text(' ${ad3ya[currentindex]}',
-                      style: TextStyle(fontSize: 25,color: Colors.white))),
+                      style: TextStyle(fontSize: 25,color: Theme.of(context).colorScheme.onPrimary))),
             ],
           ),
         ),

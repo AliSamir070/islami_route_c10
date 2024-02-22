@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_app_c10/style/theme.dart';
 import 'package:islamy_app_c10/ui/home/hadeth_model.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
@@ -11,7 +12,8 @@ class HadethDetailsScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/bg3.png"),
+              image: AssetImage(
+                 AppTheme.isdark?"assets/images/darkbackground.png": "assets/images/bg3.png"),
               fit: BoxFit.fill
           )
       ),
