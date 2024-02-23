@@ -7,10 +7,13 @@ import 'package:islamy_app_c10/ui/home/home_screen.dart';
 import 'package:islamy_app_c10/ui/quran_details/quran_details_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider = SettingsProvider();
+  await provider.loadSettings();
   print("Hello");
   runApp(ChangeNotifierProvider(
-      create: (context)=>SettingsProvider(),
+      create: (context)=> provider,
       child: const MyApp()));
 }
 

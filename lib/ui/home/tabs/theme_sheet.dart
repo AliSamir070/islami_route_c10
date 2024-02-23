@@ -22,9 +22,9 @@ class _ThemeSheetState extends State<ThemeSheet> {
               ?AppLocalizations.of(context)!.dark:AppLocalizations.of(context)!.light),
           SizedBox(height: 15,),
           InkWell(
-              onTap: (){
+              onTap: () async {
                 Navigator.pop(context);
-                provider.changeTheme(provider.theme == ThemeMode.dark?ThemeMode.light:ThemeMode.dark);
+                await provider.changeTheme(provider.theme == ThemeMode.dark?ThemeMode.light:ThemeMode.dark);
               },
               child: getUnselectedItem(provider.theme == ThemeMode.dark
                   ?AppLocalizations.of(context)!.light:AppLocalizations.of(context)!.dark)),
