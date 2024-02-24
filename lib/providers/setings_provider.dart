@@ -1,37 +1,50 @@
+
 import 'package:flutter/material.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
-// observable
-// subject
-// publisher
-class SettingsProvider extends ChangeNotifier{
-  ThemeMode theme = ThemeMode.light;
+class SettingProvider extends ChangeNotifier{
 
-  Future<void> changeTheme(ThemeMode newTheme) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    if(theme == newTheme) return;
-    if(newTheme==ThemeMode.dark){
-      prefs.setBool("theme", true);
+  ThemeMode theme=ThemeMode.dark;
+
+
+
+
+  Future<void> changeTheme(ThemeMode newThemeMode) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if(theme==newThemeMode)return;
+    if (newThemeMode==ThemeMode.dark){
+      prefs.setBool("theme",true);
     }else{
-      prefs.setBool("theme", false);
+      prefs.setBool("theme",false);
     }
 
-    theme = newTheme;
+
+    theme=newThemeMode;
+
+
     notifyListeners();
   }
+
+  String language='en';
   Future<void> init() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    language=  prefs.getString('language')??"en";
-    theme=prefs.getBool('theme')==true?ThemeMode.dark:ThemeMode.light;
-  }
-
-  String language = "en";
-
-  Future<void> changeLanguage(String newLanguage) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    if(language == newLanguage) return;
-    prefs.setString("language", newLanguage);
-    language = newLanguage;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    language = prefs.getString("language")??"en" ;
+    theme= prefs.getBool("theme")==true?ThemeMode.dark:ThemeMode.light;
     notifyListeners();
   }
+
+  Future<void> changeLnaguage(String newLnaguage) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if(language == newLnaguage)return;
+
+    language= newLnaguage;
+    prefs.setString('language',language);
+
+
+
+    notifyListeners();
+  }
+
 }

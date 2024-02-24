@@ -12,7 +12,7 @@ class ThemeSheet extends StatefulWidget {
 class _ThemeSheetState extends State<ThemeSheet> {
   @override
   Widget build(BuildContext context) {
-    SettingsProvider provider = Provider.of<SettingsProvider>(context);
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(

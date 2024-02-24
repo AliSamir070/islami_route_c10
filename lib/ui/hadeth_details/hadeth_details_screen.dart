@@ -11,7 +11,7 @@ class HadethDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SettingsProvider provider = Provider.of<SettingsProvider>(context);
+    SettingProvider provider = Provider.of<SettingProvider>(context);
 
     HadethModel hadethModel = ModalRoute.of(context)?.settings.arguments as HadethModel;
     return Container(
