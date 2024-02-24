@@ -15,7 +15,7 @@ class QuranDetailsScreen extends StatefulWidget {
 class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   @override
   Widget build(BuildContext context){
-    SettingsProvider provider = Provider.of<SettingsProvider>(context);
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     QuranDetailsArgs args = ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
     if(lines.isEmpty){
       readQuranFile(args.index);

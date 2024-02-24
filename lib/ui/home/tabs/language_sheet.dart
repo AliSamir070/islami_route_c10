@@ -12,7 +12,7 @@ class LanguageSheet extends StatefulWidget {
 class _LanguageSheetState extends State<LanguageSheet> {
   @override
   Widget build(BuildContext context) {
-    SettingsProvider provider = Provider.of<SettingsProvider>(context);
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -23,7 +23,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
           InkWell(
               onTap: (){
                 Navigator.pop(context);
-                provider.changeLanguage(provider.language == "ar"?"en":"ar");
+                provider.changeLnaguage(provider.language == "ar"?"en":"ar");
               },
               child: getUnselectedItem(provider.language == "ar"?"English":"العربية")),
         ],

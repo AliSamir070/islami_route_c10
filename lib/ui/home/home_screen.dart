@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    SettingsProvider provider = Provider.of<SettingsProvider>(context);
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
