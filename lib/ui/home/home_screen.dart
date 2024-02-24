@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> navWidget = [
     QuranWidget(),
     AhadethWidget(),
-    SebhaWidget(),
+    SebhaScreen(),
     RadioWidget(),
     SettingsWidget()
   ];
@@ -30,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
     SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage(provider.theme == ThemeMode.dark?"assets/images/dark_bg.png":"assets/images/bg3.png"),
-            fit: BoxFit.fill
-        )
+          image: DecorationImage(
+              image: AssetImage(provider.theme == ThemeMode.dark?"assets/images/dark_bg.png":"assets/images/bg3.png"),
+              fit: BoxFit.fill
+          )
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   icon: Icon(
-                    Icons.settings
+                      Icons.settings
                   ),
                   label: AppLocalizations.of(context)!.settings
               ),

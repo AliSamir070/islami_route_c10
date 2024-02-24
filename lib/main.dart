@@ -7,10 +7,12 @@ import 'package:islamy_app_c10/ui/home/home_screen.dart';
 import 'package:islamy_app_c10/ui/quran_details/quran_details_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-void main() {
-  print("Hello");
+Future <void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider = SettingsProvider();
+  await provider.theNewState();
   runApp(ChangeNotifierProvider(
-      create: (context)=>SettingsProvider(),
+      create: (context)=> provider,
       child: const MyApp()));
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
