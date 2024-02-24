@@ -18,12 +18,12 @@ class _LanguageSheetState extends State<LanguageSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-         getSelectedItem(provider.language == "ar"?"العربية":"English"),
+          getSelectedItem(provider.language == "ar"?"العربية":"English"),
           SizedBox(height: 15,),
           InkWell(
-              onTap: (){
+              onTap: ()async{
                 Navigator.pop(context);
-                provider.changeLanguage(provider.language == "ar"?"en":"ar");
+                await provider.changeLanguage(provider.language == "ar"?"en":"ar");
               },
               child: getUnselectedItem(provider.language == "ar"?"English":"العربية")),
         ],

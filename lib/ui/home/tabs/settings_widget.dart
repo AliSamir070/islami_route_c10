@@ -27,18 +27,18 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               showLanguageBottomSheet();
             },
             child: Container(
-              alignment: Alignment.center,
-              width: double.infinity,
-              padding: EdgeInsets.all(10),
+                alignment: Alignment.center,
+                width: double.infinity,
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.primary
-                  )
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                        color: Theme.of(context).colorScheme.primary
+                    )
                 ),
                 child: Text(provider.language == "ar"?"العربية":"English",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).primaryColor
+                    color: Theme.of(context).primaryColor
                 ))),
           ),
           SizedBox(height: 20,),
@@ -63,8 +63,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ?AppLocalizations.of(context)!.dark
                     :AppLocalizations.of(context)!.light,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).primaryColor
-                ))),
+                        color: Theme.of(context).primaryColor
+                    ))),
           ),
         ],
       ),
